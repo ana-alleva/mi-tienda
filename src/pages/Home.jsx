@@ -1,3 +1,4 @@
+import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -6,10 +7,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen mx-auto bg-gray-50">
       <Navbar openCart={openCart} />
-      <div className="flex items-center justify-center h-screen">
-        <h1 className="text-4xl font-bold text-purple-600">Bienvenido a la Tienda 🚀</h1>
+      <div className="md:px-8">
+        <HeroSection />
       </div>
     </div>
   );
