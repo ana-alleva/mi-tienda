@@ -5,12 +5,12 @@ import { Button } from "./ui/button";
 
 export default function Navbar({ openCart }) {
     return (
-        <nav className="bg-white shadow-sm py-4 px-6 flex justify-between items-center relative">
+        <nav className="py-4 px-6 flex justify-between items-center fixed top-0 w-full z-50 bg-white shadow-sm">
             <Link to="/">
                 <img src={logo} alt="Arlequín Mascotas" />
             </Link>
             <Button
-                variant="outline"
+                variant="default"
                 size="lg"
                 onClick={openCart}
                 className="flex items-center gap-2"
