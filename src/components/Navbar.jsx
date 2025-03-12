@@ -1,28 +1,24 @@
 import { Link } from "react-router-dom";
+import { ShoppingCart } from "lucide-react";
+import logo from "/src/assets/logo.png";
+import { Button } from "./ui/button";
 
 export default function Navbar({ openCart }) {
-  return (
-    <nav className="bg-white shadow-md p-4 flex justify-between items-center">
-      {/* Logo */}
-      <Link to="/" className="text-2xl font-bold text-purple-600">
-        Arlequín Mascotas
-      </Link>
+    return (
+        <nav className="py-4 px-6 flex justify-between items-center fixed top-0 w-full z-50 bg-white shadow-sm">
+            <Link to="/">
+                <img src={logo} alt="Arlequín Mascotas" />
+            </Link>
+            <Button
+                variant="default"
+                size="lg"
+                onClick={openCart}
+                className="flex items-center gap-2"
+            >
+                <ShoppingCart size={20} />
+                Tu Carrito
+            </Button>
 
-      {/* Categorías */}
-      <div className="space-x-6">
-        <Link to="/" className="text-gray-600 hover:text-purple-600">Perros</Link>
-        <Link to="/" className="text-gray-600 hover:text-purple-600">Gatos</Link>
-        <Link to="/" className="text-gray-600 hover:text-purple-600">Accesorios</Link>
-        <Link to="/" className="text-gray-600 hover:text-purple-600">Comida</Link>
-      </div>
-
-      {/* Botón del carrito */}
-      <button
-        onClick={openCart}
-        className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition"
-      >
-        🛒 Tu Carrito
-      </button>
-    </nav>
-  );
+        </nav>
+    );
 }
