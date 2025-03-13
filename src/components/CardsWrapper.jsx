@@ -70,14 +70,24 @@ export default function CardsWrapper() {
                                         const whatsappMessage = `Hola, quiero reservar el producto *${prod.nombre}* por *$${prod.precio}*.`;
 
                                         return (
-                                            <div key={prod.id} className="border border-gray-300 rounded-lg shadow overflow-hidden">
+                                            <div key={prod.id} className="border border-gray-300 rounded-lg shadow overflow-hidden hover:border-purple-500 hover:shadow-[0px_1px_2px_0px_rgba(16,24,40,0.1),_0px_0px_0px_4px_rgba(158,119,237,0.4)]
+                                            focus:shadow-[0px_1px_2px_0px_rgba(16,24,40,0.1),_0px_0px_0px_4px_rgba(158,119,237,0.5)]
+                                            transition-shadow duration-300">
                                                 <img
                                                     src={prod.imagen || "https://via.placeholder.com/150"}
                                                     alt={prod.nombre}
                                                     className="w-full h-[250px] object-cover p-4"
                                                 />
                                                 <div className="bg-[#ECEAF2] p-4">
-                                                    <h3 className="text-2xl font-bold">{prod.nombre}</h3>
+                                                    <div className="relative group">
+                                                        <h3 className="text-2xl font-bold truncate w-full" title={prod.nombre}>
+                                                            {prod.nombre}
+                                                        </h3>
+                                                        <span className="absolute left-0 top-full hidden w-max bg-gray-900 text-white text-sm rounded-md px-2 py-1 opacity-0 group-hover:block group-hover:opacity-100 transition-opacity duration-200">
+                                                            {prod.nombre}
+                                                        </span>
+                                                    </div>
+
                                                     <p className="text-sm text-slate-600">{prod.descripcion}</p>
                                                     <p className="text-2xl font-semibold">${prod.precio}</p>
                                                     <p className="text-xs">{prod.stock > 0 ? `Stock: ${prod.stock}` : "Sin stock"}</p>
@@ -87,7 +97,7 @@ export default function CardsWrapper() {
                                                         rel="noopener noreferrer"
                                                         className="mt-6 block bg-purple-700 text-white px-4 py-2 rounded-lg text-center hover:bg-purple-800 transition"
                                                     >
-                                                        Reservar por WhatsApp
+                                                        Reservar tu Pedido
                                                     </a>
 
                                                 </div>

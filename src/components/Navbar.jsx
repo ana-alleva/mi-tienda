@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
-import logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo-white.svg";
 import { Button } from "./ui/button";
 
 export default function Navbar({ openCart }) {
