@@ -9,7 +9,7 @@ export function useProducts() {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:5050/api/products"); // 🔹 Ajustá el puerto si usás otro
+        const response = await fetch("https://arlequin-backend.onrender.com/api/products");
         if (!response.ok) throw new Error("Error al obtener productos");
 
         const data = await response.json();
