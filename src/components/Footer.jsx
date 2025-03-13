@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Facebook from "../assets/facebook.svg";
 import Instagram from "../assets/instagram.svg";
-import logo from "/src/assets/logo-black.svg";
+import logo from "../assets/logo-black.svg";
 
 export default function Footer() {
 
