@@ -9,4 +9,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  server: {
+    port: 5174, // 🔹 Cambiamos el puerto de Vite a 5174 (puedes poner otro si prefieres)
+  },
 });
