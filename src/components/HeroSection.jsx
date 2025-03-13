@@ -58,7 +58,16 @@ export default function HeroSection({ searchTerm, onSearchChange, onFilterChange
                 {/* Dropdown con filtros */}
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Button variant="default" iconLeft={<ListFilter size={20} />}>Filtros</Button>
+                        <Button variant="default" className="relative flex items-center gap-2">
+                            <ListFilter size={20} />
+                            Filtros
+                            {(filters.stock || filters.categorias.length > 0) && (
+                                <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                                    {filters.categorias.length + (filters.stock ? 1 : 0)}
+                                </span>
+                            )}
+                        </Button>
+
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-56 p-2 bg-white" avoidCollisions={false} sideOffset={5}>
                         <label className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-md cursor-pointer">
