@@ -1,6 +1,6 @@
 import CardsWrapper from "@/components/CardsWrapper";
 import Navbar from "@/components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "@/components/Footer";
 import Whatsapp from "../assets/whatsapp.svg";
 import Marcas from "@/components/Marcas";
 
